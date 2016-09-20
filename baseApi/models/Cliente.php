@@ -41,4 +41,6 @@ class Cliente extends \yii\db\ActiveRecord
             'nombre' => 'Nombre',
         ];
     }
+    
+
 }

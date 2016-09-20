@@ -8,6 +8,8 @@ use app\models\ClienteSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\models\UploadForm;
+use yii\web\UploadedFile;
 
 /**
  * ClienteController implements the CRUD actions for Cliente model.
@@ -37,10 +39,14 @@ class ClienteController extends Controller
     {
         $searchModel = new ClienteSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+			
+
+
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            
         ]);
     }
 
@@ -51,8 +57,18 @@ class ClienteController extends Controller
      */
     public function actionView($id)
     {
+		$items = [
+    [
+        'img' => '/images/004ACP_Ben_Stiller_072.jpg',
+    ],
+    [
+        'img' => '/images/oktober.jpg',
+	],
+    ];
+		
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'items' => $items,
         ]);
     }
 
@@ -120,5 +136,20 @@ class ClienteController extends Controller
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+    
+    public function actionUpload($id)
+    {
+        $model = new UploadForm();
+
+        if (Yii::$app->request->isPost) {
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+            if ($model->upload($id)) {
+                // file is uploaded successfully
+                return;
+            }
+        }
+
+        return;
     }
 }

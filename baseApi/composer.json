@@ -17,14 +17,18 @@
         "php": ">=5.4.0",
         "yiisoft/yii2": ">=2.0.5",
         "yiisoft/yii2-bootstrap": "*",
-        "yiisoft/yii2-swiftmailer": "*"
+        "yiisoft/yii2-swiftmailer": "*",
+ 	"yiisoft/yii2-imagine": "*",
+        "sjaakp/yii2-cycle2": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
         "yiisoft/yii2-debug": "*",
         "yiisoft/yii2-gii": "*",
-        "yiisoft/yii2-faker": "*"
-    },
+        "yiisoft/yii2-faker": "*",
+        "2amigos/yii2-gallery-widget": "~1.0",
+        "metalguardian/yii2-fotorama-widget": "*"
+   },
     "config": {
         "process-timeout": 1800
     },

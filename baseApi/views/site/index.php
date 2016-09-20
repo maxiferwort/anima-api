@@ -7,7 +7,7 @@ $this->title = 'Anima';
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>Bienvenidos a Anima!</h1>
+        <h1>Bienvenidos a Anima</h1>
 
         <p class="lead">Primer modulo de aplicación.</p>
 
